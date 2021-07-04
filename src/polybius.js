@@ -19,16 +19,18 @@ function encodeHelpFunc(item){
   //if you are encoding transferring the message into a coded message(pair of numbers)
   let newStr1 = "";
   for (let i = 0; i < item.length; i++){
-    const char = item[i]
+    let char = item[i]
     if(encoder[char]) {
       newStr1 += encoder[char]
     } else if(!encoder[char]) {
       newStr1 += " ";
     }
-  return newStr1;
   }
+  return newStr1;
 }
+//console.log(encodeHelpFunc("hello world"));
 //hello world = 3251131343 2543241341
+
 function  decodeHelpFunc(item) {
   let newStr2 = "";
   for (let i = 0; i < item.length; i+=2) {
@@ -43,6 +45,9 @@ function  decodeHelpFunc(item) {
   }
   return newStr2;
 }
+//console.log(decodeHelpFunc("3251131343 2543241341"))
+
+
   function polybius(input, encode = true) {
     // your solution code here
     // checking to see if there is a message to encode.
@@ -65,38 +70,19 @@ function  decodeHelpFunc(item) {
   };
 })();
 
+// console.log(polybiusModule.polybius("4432423352125413", false));
+// console.log(polybiusModule.polybius("thinkful"));
+// console.log(polybiusModule.polybius("3251131343 2543241341", false));
+// console.log(polybiusModule.polybius("hello world"));
+
+
+
+
 module.exports = { polybius: polybiusModule.polybius };
 
 
-// console.log(polybiusModule.polybius("3251131343 2543241341", false));
-// // let result = polybiusModule.polybius("Hello world");
-// // console.log(result);
 
 
 
-// const decodeMsg = input.toLowerCase().split("");
-// //const decodeMsg = decoder.toLowerCase().split("");
-// const output = "";
 
 
-// //trying to loop through  either a decode or encode and compare it to the input
-// //for (let message in input) 
-// for (let i = 0; i < decodeMsg.length; i++){
-
-// let objMsg = "";
-
-// if(Object.values(decoder) === decodeMsg || Object.keys(encoder) === decodeMsg) {
-// //return Object.values(decoder).push(arrMsg)
-// //return arrMsg.filter(decoder);
-
-// console.log(arrMsg.filter(decoder));
-  
-
-// }
-// }
-
-// //console.log(decoder[message])
-
-
-
-// return decoder[message];
